@@ -1,26 +1,21 @@
-# node-spinner
+# @tsuyoshiwada/node-spinner
 
 A simple spinner for node cli.
-
-[![NPM](https://nodei.co/npm/cli-spinner.png?downloads=true&downloadRank=true)](https://nodei.co/npm/cli-spinner/) [![NPM](https://nodei.co/npm-dl/cli-spinner.png?months=6&height=3)](https://nodei.co/npm/cli-spinner/)
-
-[![gitcheese.com](https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg)](https://www.gitcheese.com/donate/users/1024472/repos/14378143)
----
 
 > It is the fork version of `node-spinner`. Color designation has been added :tada:
 
 ## Installation
 
-This package is available on [npm](http://npmjs.com) as `cli-spinner`.
+This package is available on [npm](http://npmjs.com) as `@tsuyoshiwada/cli-spinner`.
 
 ``` sh
-npm install cli-spinner
+npm install @tsuyoshiwada/cli-spinner --save
 ```
 
 ## Example usage
 
 ````javascript
-var Spinner = require('cli-spinner').Spinner;
+var Spinner = require('@tsuyoshiwada/cli-spinner').Spinner;
 
 var spinner = new Spinner('processing.. %s');
 spinner.setSpinnerString('|/-\\');
@@ -92,10 +87,10 @@ Returns true/false depending on whether the spinner is currently spinning.
 
 ## Demo
 
-To see a demonstration of the built-in spinners, point your console at the `example` folder and run:
+To see a demonstration of the built-in spinners.
 
-````
-node spinner.js
-````
+```bash
+$ node example/spinner.js
+```
 
 ![preview](img/spinner.gif "Spinner")
