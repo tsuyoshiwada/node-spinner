@@ -7,6 +7,8 @@ A simple spinner for node cli.
 [![gitcheese.com](https://s3.amazonaws.com/gitcheese-ui-master/images/badge.svg)](https://www.gitcheese.com/donate/users/1024472/repos/14378143)
 ---
 
+> It is the fork version of `node-spinner`. Color designation has been added :tada:
+
 ## Installation
 
 This package is available on [npm](http://npmjs.com) as `cli-spinner`.
@@ -32,6 +34,7 @@ var obj = new Spinner('processing.. %s')
 
 var obj = new Spinner({
     text: 'processing.. %s',
+    color: 'cyan',
     stream: process.stderr,
     onTick: function(msg){
         this.clearLine(this.stream);
@@ -76,6 +79,11 @@ Sets the default spinner delay for all newly created instances.
 **`Spinner.setSpinnerTitle(spinnerTitle)`**
 
 Sets the spinner title. Use printf-style strings to position the spinner.
+
+
+**`Spinner.setSpinnerColor(color)`**
+
+Sets the spinner color. Please specify the color name as a character string. Using [chalk](https://github.com/chalk/chalk); (Default: `null`)
 
 
 **`Spinner.isSpinning()`**
