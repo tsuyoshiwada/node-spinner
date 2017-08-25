@@ -1,3 +1,4 @@
+var chalk = require('chalk');
 var readline = require('readline');
 
 var defaultSpinnerString = 0;
@@ -18,6 +19,7 @@ var Spinner = function(options){
   }
 
   this.text = options.text || '';
+  this.setSpinnerColor(options.color || null);
   this.setSpinnerString(defaultSpinnerString);
   this.setSpinnerDelay(defaultSpinnerDelay);
   this.onTick = options.onTick || defaultOnTick;
@@ -38,11 +40,12 @@ Spinner.prototype.start = function() {
 
   var current = 0;
   var self = this;
+  var decorate = this.color ? chalk[this.color] : function(s) { return s; };
 
   this.id = setInterval(function() {
     var msg = self.text.indexOf('%s') > -1
-      ? self.text.replace('%s', self.chars[current])
-      : self.chars[current] + ' ' + self.text;
+      ? self.text.replace('%s', decorate(self.chars[current]))
+      : decorate(self.chars[current]) + ' ' + self.text;
 
     self.onTick(msg);
 
@@ -64,6 +67,10 @@ Spinner.prototype.setSpinnerString = function(str) {
 
 Spinner.prototype.setSpinnerTitle = function(str) {
   this.text = str;
+}
+
+Spinner.prototype.setSpinnerColor = function(color) {
+  this.color = color;
 }
 
 Spinner.prototype.stop = function(clear) {
