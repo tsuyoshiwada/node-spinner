@@ -28,5 +28,8 @@
   "license": "MIT",
   "engines": {
     "node": ">=0.10"
+  },
+  "dependencies": {
+    "chalk": "^2.1.0"
   }
 }
